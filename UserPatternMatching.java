@@ -33,7 +33,7 @@ public class UserPatternMatching {
         if (Email) {
             System.out.println(email + " is Valid ");
         } else {
-            System.out.println(email + " is invalid ");
+            System.out.println(email + " is Invalid ");
         }
     }
 
@@ -44,7 +44,18 @@ public class UserPatternMatching {
         if (phone) {
             System.out.println(Phone + " is Valid ");
         } else {
-            System.out.println(Phone + " is invalid ");
+            System.out.println(Phone + " is Invalid ");
+        }
+    }
+
+    public static void ValPassword () {
+        System.out.print ("Enter Your Password : ");
+        String Password = input.nextLine();
+        boolean password = Pattern.compile("^[a-z]{8,32}$").matcher(Password).matches();
+        if (password) {
+            System.out.println (Password + " is Valid ");
+        } else {
+            System.out.println (Password + " is Invalid !");
         }
     }
 
@@ -54,6 +65,7 @@ public class UserPatternMatching {
         user.Lastname();
         user.Email();
         user.MobileNumber();
+        user.ValPassword();
     }
 }
 
