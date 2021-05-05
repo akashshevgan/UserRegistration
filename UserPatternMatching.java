@@ -25,6 +25,7 @@ public class UserPatternMatching {
             System.out.println(Lastname + " is Invalid ");
         }
     }
+
     public void Email() {
         System.out.print(" Enter Email: ");
         String email = input.nextLine();
@@ -36,11 +37,23 @@ public class UserPatternMatching {
         }
     }
 
+    public void MobileNumber() {
+        System.out.print(" Enter Mobile Number With Country code: ");
+        String Phone = input.nextLine();
+        boolean phone = Pattern.compile("^[0-9]{2}\\s[0-9]{10}").matcher(Phone).matches();
+        if (phone) {
+            System.out.println(Phone + " is Valid ");
+        } else {
+            System.out.println(Phone + " is invalid ");
+        }
+    }
+
     public static void main(String[] args) {
         UserPatternMatching user = new UserPatternMatching();
         user.FirstName();
         user.Lastname();
         user.Email();
+        user.MobileNumber();
     }
 }
 
