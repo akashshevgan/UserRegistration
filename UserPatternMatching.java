@@ -14,10 +14,22 @@ public class UserPatternMatching {
             System.out.println(FirsName + " is Invalid ");
         }
     }
+    public void Lastname() {
+        System.out.print("Enter Last Name: ");
+        String Lastname = input.nextLine();
+        boolean lastname = Pattern.compile("^[A-Z][a-z]{3,20}").matcher(Lastname).matches();
+        if (lastname) {
+            System.out.println(Lastname + " is Valid ");
+        } else {
+            System.out.println(Lastname + " is Invalid ");
+        }
+
+    }
 
     public static void main(String[] args) {
         UserPatternMatching user = new UserPatternMatching();
         user.FirstName();
+        user.Lastname();
     }
 }
 
