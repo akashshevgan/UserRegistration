@@ -14,6 +14,7 @@ public class UserPatternMatching {
             System.out.println(FirsName + " is Invalid ");
         }
     }
+
     public void Lastname() {
         System.out.print("Enter Last Name: ");
         String Lastname = input.nextLine();
@@ -23,13 +24,23 @@ public class UserPatternMatching {
         } else {
             System.out.println(Lastname + " is Invalid ");
         }
-
+    }
+    public void Email() {
+        System.out.print(" Enter Email: ");
+        String email = input.nextLine();
+        boolean Email = Pattern.compile("(^[a-z 0-9]{0,30} *([.+/-]?[a-z 0-9]{1,20})@[a-z]{1,20}.([a-z]{2,3} *(.[a-z]{2,3}))$)").matcher(email).matches();
+        if (Email) {
+            System.out.println(email + " is Valid ");
+        } else {
+            System.out.println(email + " is invalid ");
+        }
     }
 
     public static void main(String[] args) {
         UserPatternMatching user = new UserPatternMatching();
         user.FirstName();
         user.Lastname();
+        user.Email();
     }
 }
 
