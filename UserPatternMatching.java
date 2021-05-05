@@ -51,7 +51,7 @@ public class UserPatternMatching {
     public static void ValPassword () {
         System.out.print ("Enter Your Password : ");
         String Password = input.nextLine();
-        boolean password = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]){8,32}.*$").matcher(Password).matches();
+        boolean password = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]?){8,32}.*$").matcher(Password).matches();
         if (password) {
             System.out.println (Password + " is Valid ");
         } else {
